@@ -14,5 +14,34 @@ fun todoTask1(collection: Collection<Int>): Nothing = TODO(
 
 
 fun task1(collection: Collection<Int>): String {
-    todoTask1(collection)
+//    // my solution
+//
+//    var sb = StringBuilder()
+//    sb.append("{")
+//    val iterator = collection.iterator()
+//
+//    while (iterator.hasNext()) {
+//        val element: Int = iterator.next() //TODO do I have to tell the compiler?
+//        sb.append(element)
+//        if (iterator.hasNext()) {
+//            sb.append(", ")
+//        }
+//    }
+//
+//    sb.append("}")
+//    return sb.toString()
+
+    // automatic conversion
+    val sb = StringBuilder()
+    sb.append("{")
+    val iterator = collection.iterator()
+    while (iterator.hasNext()) {
+        val element = iterator.next()
+        sb.append(element)
+        if (iterator.hasNext()) {
+            sb.append(", ")
+        }
+    }
+    sb.append("}")
+    return sb.toString()
 }
